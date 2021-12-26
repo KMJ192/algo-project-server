@@ -7,7 +7,7 @@
 1. install
 
 ```
-cargo install cargo-warch
+cargo install cargo-watch
 ```
 
 2. run
