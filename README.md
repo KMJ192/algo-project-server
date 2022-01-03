@@ -15,3 +15,23 @@ cargo install cargo-watch
 ```
 cargo watch -x 'run algo-project-server'
 ```
+
+### Docker
+
+1. download docker - rust
+
+```
+docker pull rust
+```
+
+2. build
+
+```
+docker build -t algo-project-server .
+```
+
+3. run
+
+```
+docker run --rm -dp 3000:3000  algo-project-server
+```
