@@ -7,7 +7,7 @@ use random_matching::matching_algorithm::random_matching_build;
 
 #[get("/")]
 async fn hello() -> impl Responder {
-	HttpResponse::Ok().body("")
+	HttpResponse::Ok().body("hello")
 }
 
 #[post("/echo")]
@@ -28,7 +28,7 @@ async fn main() -> std::io::Result<()> {
 
 	HttpServer::new(|| {
 		App::new()
-			// .service(hello)
+			.service(hello)
 			// .service(echo)
 			.service(random_matching_build)
 	})
