@@ -18,7 +18,7 @@ cargo watch -x 'run algo-project-server'
 
 ### Docker
 
-1. download docker - rust
+1. download docker rust
 
 ```
 docker pull rust
@@ -34,4 +34,26 @@ docker build -t algo-project-server .
 
 ```
 docker run --rm -dp 3000:3000  algo-project-server
+```
+
+### Docker Compose
+
+run
+
+```
+docker-compose up -d
+```
+
+### Docker mysql
+
+1. bash
+
+```
+docker exec -i -t algo-project-mysql bash
+```
+
+2. login in mysql bash
+
+```
+mysql -u root -p
 ```
