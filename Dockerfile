@@ -20,4 +20,4 @@ COPY --from=0 /algo-project-server/target/release/algo-project-server .
 
 EXPOSE 8080
 
-CMD ["algo-project-server"]
+CMD ["./algo-project-server"]

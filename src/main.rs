@@ -1,6 +1,6 @@
 mod random_matching;
 
-// use std::env;
+use std::env;
 use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
 
 use random_matching::matching_algorithm::random_matching_build;
@@ -21,10 +21,10 @@ async fn manual_hello() -> impl Responder {
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-	// let mut bind_addr = env::var("BIND_ADDR").expect("Expected a port in the environment");
-	// if bind_addr.len() == 0 {
-	//   bind_addr = String::from("localhost:8080");
-	// }
+	// let app_host = env::var("APP_HOST").expect("Host not found.");
+	// let app_port = env::var("APP_PORT").expect("Port not found.");
+	// let db_url = env::var("DB_URL").expect("db url not found.");
+	// let app_url = format!("{}:{}", &app_host, &app_port);
 
 	HttpServer::new(|| {
 		App::new()
