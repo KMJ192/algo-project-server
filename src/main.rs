@@ -21,10 +21,11 @@ async fn manual_hello() -> impl Responder {
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-	// let app_host = env::var("APP_HOST").expect("Host not found.");
-	// let app_port = env::var("APP_PORT").expect("Port not found.");
-	// let db_url = env::var("DB_URL").expect("db url not found.");
-	// let app_url = format!("{}:{}", &app_host, &app_port);
+	let addr = match env::var("SERVER_HOST") {
+		Ok(host) => host,
+		Err(_e) => "0.0.0.0:8000".to_string(),
+	};
+
 
 	HttpServer::new(|| {
 		App::new()
@@ -32,7 +33,7 @@ async fn main() -> std::io::Result<()> {
 			// .service(echo)
 			.service(random_matching_build)
 	})
-	.bind("localhost:8080")?
+	.bind(&addr)?
 	.run()
 	.await
 }

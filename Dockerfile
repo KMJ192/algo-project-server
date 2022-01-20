@@ -1,4 +1,4 @@
-FROM rust:1.57
+FROM rust:1.58
 
 RUN USER=root cargo new --bin algo-project-server
 WORKDIR /algo-project-server
@@ -14,10 +14,8 @@ COPY ./src ./src
 RUN rm ./target/release/deps/*
 RUN cargo build --release
 
-FROM rust:1.57
+FROM rust:1.58
 
 COPY --from=0 /algo-project-server/target/release/algo-project-server .
-
-EXPOSE 8080
 
 CMD ["./algo-project-server"]

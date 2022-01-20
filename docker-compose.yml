@@ -9,8 +9,8 @@ services:
     volumes:
       - .:/app
     depends_on:
-      - mysql
-  mysql:
+      - database
+  database:
     image: mysql
     restart: always
     ports:
@@ -20,5 +20,4 @@ services:
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     volumes:
-      - ./dbdata:/var/lib/mysql
-    build: .
+      - .dbdata:/var/lib/mysql
