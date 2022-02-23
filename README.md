@@ -33,7 +33,7 @@ docker build -t algo-project-server .
 3. run
 
 ```
-docker run --rm -dp 3000:3000  algo-project-server
+docker run --rm -dp 8080:8080  algo-project-server
 ```
 
 ### Docker Compose
